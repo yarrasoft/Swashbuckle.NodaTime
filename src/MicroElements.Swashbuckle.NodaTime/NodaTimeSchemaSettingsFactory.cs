@@ -30,8 +30,6 @@ namespace MicroElements.Swashbuckle.NodaTime
             string FormatToJson(object value)
             {
                 string formatToJson = JsonConvert.SerializeObject(value, serializerSettings);
-                if (formatToJson.StartsWith("\"") && formatToJson.EndsWith("\""))
-                    formatToJson = formatToJson.Substring(1, formatToJson.Length - 2);
                 return formatToJson;
             }
 
@@ -64,15 +62,7 @@ namespace MicroElements.Swashbuckle.NodaTime
         {
             string FormatToJson(object value)
             {
-                if (value is DateTimeZone dateTimeZone)
-                {
-                    // TODO: remove after PR released: https://github.com/nodatime/nodatime.serialization/pull/57
-                    return dateTimeZone.Id;
-                }
-
                 string formatToJson = System.Text.Json.JsonSerializer.Serialize(value, jsonSerializerOptions);
-                if (formatToJson.StartsWith("\"") && formatToJson.EndsWith("\""))
-                    formatToJson = formatToJson.Substring(1, formatToJson.Length - 2);
                 return formatToJson;
             }
 

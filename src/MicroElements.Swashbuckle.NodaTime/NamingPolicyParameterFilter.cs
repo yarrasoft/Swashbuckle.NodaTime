@@ -1,7 +1,7 @@
 ﻿// Copyright (c) MicroElements. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-using Microsoft.OpenApi.Models;
+using Microsoft.OpenApi;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace MicroElements.Swashbuckle.NodaTime
@@ -23,9 +23,10 @@ namespace MicroElements.Swashbuckle.NodaTime
         }
 
         /// <inheritdoc />
-        public void Apply(OpenApiParameter parameter, ParameterFilterContext context)
+        public void Apply(IOpenApiParameter parameter, ParameterFilterContext context)
         {
-            parameter.Name = _nodaTimeSchemaSettings.ResolvePropertyName(parameter.Name);
+            if (parameter is OpenApiParameter openApiParameter)
+                openApiParameter.Name = _nodaTimeSchemaSettings.ResolvePropertyName(parameter.Name);
         }
     }
 }

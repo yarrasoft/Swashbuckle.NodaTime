@@ -2,8 +2,8 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 using System.Collections.Generic;
-using Microsoft.OpenApi.Any;
-using Microsoft.OpenApi.Models;
+using System.Text.Json.Nodes;
+using Microsoft.OpenApi;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using NodaTime;
@@ -45,8 +45,8 @@ namespace MicroElements.Swashbuckle.NodaTime
                 ZonedDateTime = () => StringSchema(examples.ZonedDateTime),
                 Interval = () => new OpenApiSchema
                 {
-                    Type = "object",
-                    Properties = new Dictionary<string, OpenApiSchema>
+                    Type = JsonSchemaType.Object,
+                    Properties = new Dictionary<string, IOpenApiSchema>
                     {
                         { ResolvePropertyName(nameof(Interval.Start)), StringSchema(examples.Interval.Start, "date-time") },
                         { ResolvePropertyName(nameof(Interval.End)), StringSchema(examples.Interval.End, "date-time") },
@@ -54,8 +54,8 @@ namespace MicroElements.Swashbuckle.NodaTime
                 },
                 DateInterval = () => new OpenApiSchema
                 {
-                    Type = "object",
-                    Properties = new Dictionary<string, OpenApiSchema>
+                    Type = JsonSchemaType.Object,
+                    Properties = new Dictionary<string, IOpenApiSchema>
                     {
                         { ResolvePropertyName(nameof(DateInterval.Start)), StringSchema(examples.DateInterval.Start, "date") },
                         { ResolvePropertyName(nameof(DateInterval.End)), StringSchema(examples.DateInterval.End, "date") },
@@ -74,9 +74,9 @@ namespace MicroElements.Swashbuckle.NodaTime
         {
             return new OpenApiSchema
             {
-                Type = "string",
+                Type = JsonSchemaType.String,
                 Example = _settings.ShouldGenerateExamples
-                    ? new OpenApiString(FormatToJson(exampleObject))
+                    ? JsonNode.Parse(FormatToJson(exampleObject))
                     : null,
                 Format = format
             };
