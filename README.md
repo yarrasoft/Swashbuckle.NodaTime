@@ -1,24 +1,15 @@
-# MicroElements.Swashbuckle.NodaTime
-Allows configure Asp.Net Core and swagger to use NodaTime types.
-
-## Latest Builds, Packages
-[![License](http://img.shields.io/:license-mit-blue.svg)](https://raw.githubusercontent.com/micro-elements/MicroElements.Swashbuckle.NodaTime/master/LICENSE)
-[![NuGet](https://img.shields.io/nuget/v/MicroElements.Swashbuckle.NodaTime.svg)](https://www.nuget.org/packages/MicroElements.Swashbuckle.NodaTime)
-![NuGet](https://img.shields.io/nuget/dt/MicroElements.Swashbuckle.NodaTime.svg)
-[![MyGet](https://img.shields.io/myget/micro-elements/v/MicroElements.Swashbuckle.NodaTime.svg)](https://www.myget.org/feed/micro-elements/package/nuget/MicroElements.Swashbuckle.NodaTime)
-
-[![Travis](https://img.shields.io/travis/micro-elements/MicroElements.Swashbuckle.NodaTime/master.svg?logo=travis)](https://travis-ci.org/micro-elements/MicroElements.Swashbuckle.NodaTime)
-[![AppVeyor](https://img.shields.io/appveyor/ci/micro-elements/microelements-swashbuckle-nodatime.svg?logo=appveyor)](https://ci.appveyor.com/project/micro-elements/microelements-swashbuckle-nodatime)
-[![Coverage Status](https://img.shields.io/coveralls/micro-elements/MicroElements.Swashbuckle.NodaTime.svg)](https://coveralls.io/r/micro-elements/MicroElements.Swashbuckle.NodaTime)
-
-[![Gitter](https://img.shields.io/gitter/room/micro-elements/MicroElements.Swashbuckle.NodaTime.svg)](https://gitter.im/micro-elements/MicroElements.Swashbuckle.NodaTime)
+# Yarrasoft.Swashbuckle.NodaTime
+Allows configure Asp.Net Core and swagger to use NodaTime types.  
+> Temporary package for .NET 10 support  
+> Forked from [MicroElements.Swashbuckle.NodaTime](https://github.com/micro-elements/MicroElements.Swashbuckle.NodaTime)  
+> Contains fixes merged from [xikxekxok](https://github.com/xikxekxok/MicroElements.Swashbuckle.NodaTime)
 
 ## Installation
 
 ### Package Reference:
 
 ```
-dotnet add package microelements.swashbuckle.nodatime
+dotnet add package yarrasoft.swashbuckle.nodatime
 ```
 
 ## Getting started
