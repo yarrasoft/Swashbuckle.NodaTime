@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
     <LangVersion>latest</LangVersion>
     <PackageId>Yarrasoft.Swashbuckle.NodaTime</PackageId>
-    <Version>10.0.0-alpha</Version>
+    <Version>10.0.1</Version>
     <Authors>micro-elements, others</Authors>
     <PackageProjectUrl>https://github.com/yarrasoft/Swashbuckle.NodaTime</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/yarrasoft/Swashbuckle.NodaTime/master/LICENSE</PackageLicenseUrl>
